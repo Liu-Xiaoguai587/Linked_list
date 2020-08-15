@@ -168,3 +168,31 @@ Tlist list<Tlist>::operator[](int _operNum) {
 		return false;
 	}// else end
 }
+
+
+
+/*******************************v0.1********************************/
+
+//iterator 无参构造函数
+template<class Tlist>
+list<Tlist>::iterator::iterator() {
+	this->m_m_it = NULL;
+}
+
+//list begin()迭代器
+template<class Tlist>
+Tlist* list<Tlist>::begin() {
+	return &this->m_Head->m_Date;
+}
+
+//list end()迭代器
+//因为链表中数据不在同一段内存中，end()迭代器并没有太大的用处。
+//此end()迭代器依然指向最后一个数据后的第一个数据
+template<class Tlist>
+Tlist* list<Tlist>::end() {
+	Tlist* _tempTlist;
+	_tempTlist = &(this->m_Tail->m_Date);
+	_tempTlist += sizeof(Tlist);
+
+	return _tempTlist;
+}

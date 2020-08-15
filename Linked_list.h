@@ -34,13 +34,22 @@ public:
 	void push_front(Tlist num);
 	void pop_back();
 	void pop_front();
-
-
 	int size(void);
 	bool empty(void);
-
 	Tlist at(int _atNum);
 	Tlist operator[](int _operNum);
+
+	Tlist* begin();
+	Tlist* end();
+//class
+public:
+	class iterator {
+	public:
+		iterator();
+
+
+		link<Tlist>* m_m_it;
+	};
 	
 
 private:
